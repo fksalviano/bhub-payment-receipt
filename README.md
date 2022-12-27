@@ -19,6 +19,10 @@ The tech challenge was solved using the follow:
     - **VideoProductProcessor**
     - **MembershipProcessor**
     - **MembershipUpgradeProcessor**
+    
+    **Class Diagram**
+
+    ![Class Diagram](/doc/Payment%20Receipt%20Process.drawio.png?raw=true "Class Diagram")
 
 ## Worker
 
