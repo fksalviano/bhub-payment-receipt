@@ -1,4 +1,4 @@
-namespace Application.UseCases.ProcessReceipt.Domain.ReceiptProcessors.CommissionPaymentGenerator.Abstractions;
+namespace Application.UseCases.ProcessReceipt.ReceiptProcessors.CommissionPaymentGenerator.Abstractions;
 
 public interface ICommissionPaymentGenerator
 {

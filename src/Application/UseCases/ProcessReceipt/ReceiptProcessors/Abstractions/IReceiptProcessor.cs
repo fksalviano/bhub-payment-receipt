@@ -1,6 +1,6 @@
-namespace Application.UseCases.ProcessReceipt.Domain.Abstractions;
+namespace Application.UseCases.ProcessReceipt.Abstractions;
 
 public interface IReceiptProcessor
-{     
+{
     Task Execute(PaymentReceipt receipt);
 }

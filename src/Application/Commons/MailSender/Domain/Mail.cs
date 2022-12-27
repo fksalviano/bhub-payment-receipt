@@ -1,6 +1,6 @@
 namespace Application.Commons.MailSender.Domain;
 
-public class Mail
+public struct Mail
 {    
     public string From { get; }   
     public string To { get; }

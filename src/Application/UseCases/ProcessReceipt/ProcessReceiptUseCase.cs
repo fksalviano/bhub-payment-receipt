@@ -1,6 +1,6 @@
 using Application.UseCases.ProcessReceipt.Ports;
 using Application.UseCases.ProcessReceipt.Abstractions;
-using Application.UseCases.ProcessReceipt.Domain.ReceiptProcessors.Factories.Abstractions;
+using Application.UseCases.ProcessReceipt.ReceiptProcessors.Factories.Abstractions;
 
 namespace Application.UseCases.ProcessReceipt;
 
@@ -19,15 +19,9 @@ public class ProcessReceiptUseCase : IProcessReceiptUseCase
 
     public async Task Execute(ProcessReceiptInput input)
     {       
-        if (input.Receipt is null)
-        {
-            _outputPort.Invalid("Receipt is null");
-            return;
-        }
-        
         var receipt = input.Receipt;
-        var receiptProcessor = _processorFactory.GetProcessor(receipt);
         
+        var receiptProcessor = _processorFactory.GetProcessor(receipt);        
         await receiptProcessor.Execute(receipt);
 
         _outputPort.Ok();        

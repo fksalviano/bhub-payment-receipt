@@ -1,12 +1,12 @@
 using Application.Commons.Domain;
+using Application.Commons.MailSender.Domain;
 
 namespace Application.Commons.Extensions;
 
 public static class ProductExtensions
 {
-    public static bool IsFisical(this Product product) => product.Type == ProductType.Fisical;
+    // TODO: call a builder to build the tutorial video mail based on product video and tutorial
 
-    public static bool IsBook(this Product product) => product.Type == ProductType.Book;
-
-    public static bool IsVideo(this Product product) => product.Type == ProductType.Video;
+    public static Mail GetVideoTutorialMail(this Product product) => new Mail("test", "test", 
+        $"This is the tutorial video {product.Video?.TutorialVideo?.Title} for video {product.Video?.Title}");
 }

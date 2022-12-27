@@ -1,4 +1,4 @@
-using Application.UseCases.ProcessReceipt.Domain;
+using Application.UseCases.ProcessReceipt;
 
 namespace Application.UseCases.ProcessReceipt.Ports;
 

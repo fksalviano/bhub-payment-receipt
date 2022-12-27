@@ -1,5 +1,3 @@
-using Application.UseCases.ProcessReceipt.Ports;
-
 namespace Application.UseCases.ProcessReceipt.Abstractions;
 
 public interface IProcessReceiptOutputPort

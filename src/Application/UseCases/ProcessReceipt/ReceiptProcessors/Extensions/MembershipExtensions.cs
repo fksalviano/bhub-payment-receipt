@@ -1,7 +1,7 @@
 using Application.Commons.Domain;
 using Application.Commons.MailSender.Domain;
 
-namespace Application.UseCases.ProcessReceipt.Domain.ReceiptProcessors.Extensions;
+namespace Application.UseCases.ProcessReceipt.ReceiptProcessors.Extensions;
 
 public static class MembershipExtensions
 {

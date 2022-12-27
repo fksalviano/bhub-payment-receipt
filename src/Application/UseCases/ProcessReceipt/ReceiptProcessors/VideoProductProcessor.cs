@@ -1,17 +1,16 @@
-using Application.Commons.Domain;
+using Application.Commons.Extensions;
 using Application.Commons.MailSender.Abstractions;
-using Application.UseCases.ProcessReceipt.Domain.Abstractions;
-using Application.UseCases.ProcessReceipt.Domain.ReceiptProcessors.Extensions;
+using Application.UseCases.ProcessReceipt.Abstractions;
 
-namespace Application.UseCases.ProcessReceipt.Domain.ReceiptProcessor;
+namespace Application.UseCases.ProcessReceipt.ReceiptProcessors;
 
 public class VideoProductProcessor : IReceiptProcessor
 {
     private readonly IReceiptProcessor _defaultProcessor;
-    private readonly IMailSender _mailSender;
+    private readonly IMailSender _mailSender;    
 
-    public VideoProductProcessor(IReceiptProcessor defaultProcessor, IMailSender mailSender)
-    {        
+    public VideoProductProcessor(IDefaultReceiptProcessor defaultProcessor, IMailSender mailSender)
+    {
         _defaultProcessor = defaultProcessor;
         _mailSender = mailSender;
     }
@@ -19,9 +18,12 @@ public class VideoProductProcessor : IReceiptProcessor
     public async Task Execute(PaymentReceipt receipt)
     {
         await _defaultProcessor.Execute(receipt);
-
         Console.WriteLine($"{nameof(VideoProductProcessor)}.Execute()");
 
-        //TODO: check if is specific video and send specifiC tutorial                
-    }    
+        if (receipt.Product?.Video?.TutorialVideo is not null)
+        {
+            var tutorialVideoMail = receipt.Product.GetVideoTutorialMail();
+            await _mailSender.SendMail(tutorialVideoMail);
+        }
+    }
 }

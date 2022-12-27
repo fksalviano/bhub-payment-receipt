@@ -1,6 +1,6 @@
-using Application.UseCases.ProcessReceipt.Domain.ReceiptProcessors.DeliveryNoteSender.Domain;
+using Application.UseCases.ProcessReceipt.ReceiptProcessors.DeliveryNoteSender.Domain;
 
-namespace Application.UseCases.ProcessReceipt.Domain.ReceiptProcessors.Extensions;
+namespace Application.UseCases.ProcessReceipt.ReceiptProcessors.Extensions;
 
 public static class PaymentReceiptExtensions
 {
