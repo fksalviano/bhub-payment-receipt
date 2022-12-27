@@ -1,6 +1,6 @@
 using Application.Commons.Domain;
 
-namespace Application.UseCases.ProcessReceipt;
+namespace Application.UseCases.ProcessReceipt.Domain;
 
 public class PaymentReceipt
 {

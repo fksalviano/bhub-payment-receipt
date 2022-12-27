@@ -1,5 +1,6 @@
 using Application.Commons.MailSender.Abstractions;
 using Application.UseCases.ProcessReceipt.Abstractions;
+using Application.UseCases.ProcessReceipt.Domain;
 using Application.UseCases.ProcessReceipt.ReceiptProcessors.CommissionPaymentGenerator.Abstractions;
 using Application.UseCases.ProcessReceipt.ReceiptProcessors.DeliveryNoteSender.Abstractions;
 using Application.UseCases.ProcessReceipt.ReceiptProcessors.DeliveryNoteSender.Extensions;

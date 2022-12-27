@@ -1,6 +1,7 @@
 using Application.Commons.Domain;
 using Application.Commons.MailSender.Abstractions;
 using Application.UseCases.ProcessReceipt.Abstractions;
+using Application.UseCases.ProcessReceipt.Domain;
 using Application.UseCases.ProcessReceipt.ReceiptProcessors.Extensions;
 
 namespace Application.UseCases.ProcessReceipt.ReceiptProcessors;

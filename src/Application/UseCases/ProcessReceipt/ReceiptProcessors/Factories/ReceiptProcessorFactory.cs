@@ -1,6 +1,6 @@
 using Application.Commons.Domain;
 using Application.UseCases.ProcessReceipt.Abstractions;
-using Application.UseCases.ProcessReceipt.ReceiptProcessors;
+using Application.UseCases.ProcessReceipt.Domain;
 using Application.UseCases.ProcessReceipt.ReceiptProcessors.Factories.Abstractions;
 using static Application.Commons.Domain.MembershipType;
 

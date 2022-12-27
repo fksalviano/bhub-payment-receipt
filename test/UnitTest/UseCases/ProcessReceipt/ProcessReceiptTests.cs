@@ -1,5 +1,6 @@
 using Application.UseCases.ProcessReceipt;
 using Application.UseCases.ProcessReceipt.Abstractions;
+using Application.UseCases.ProcessReceipt.Domain;
 using Application.UseCases.ProcessReceipt.Ports;
 using Moq.AutoMock;
 using Moq;
