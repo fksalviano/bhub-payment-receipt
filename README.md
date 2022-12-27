@@ -11,7 +11,7 @@ The tech challenge was solved using the follow:
 
     Uses a **ReceiptProcessorFactory** to get  one of the following specific **ReceiptProcessor** to process the payment receipt.
     
-    By default, all the specific processor call and executes the default processor before execute tour own routine to process.
+    By default, all the specific processor call and executes the default processor before execute your own routine to process.
 
     - **DefaultReceiptProcessor**
     - **FisicalProductProcessor**
@@ -46,13 +46,13 @@ Need to install the following:
 #### Clone the repository:
 
 ```bash
-git clone https://github.com/fksalviano/api-clean-vs.git
+git clone https://github.com/fksalviano/bhub-payment-receipt.git
 ```
 
 #### Go to the project directory
 
 ```bash
-cd api-clean-vs
+cd bhub-payment-receipt
 ```
 
 #### Build the project
