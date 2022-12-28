@@ -27,12 +27,12 @@ public class ProcessReceiptController: Controller, IProcessReceiptOutputPort
         return _viewModel!;
     }
 
-    void IProcessReceiptOutputPort.Ok() => 
+    void IProcessReceiptOutputPort.Ok() =>
         _viewModel = Ok();
 
-    void IProcessReceiptOutputPort.Invalid(string message) => 
-        BadRequest(message);
+    void IProcessReceiptOutputPort.Invalid(string message) =>
+        _viewModel = BadRequest(message);
 
     void IProcessReceiptOutputPort.Error(string message) =>
-        StatusCode(StatusCodes.Status500InternalServerError, message);
+        _viewModel = StatusCode(StatusCodes.Status500InternalServerError, message);
 }
