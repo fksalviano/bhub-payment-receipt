@@ -12,8 +12,8 @@ public class MembershipProcessor : IReceiptProcessor
     private readonly IMailSender _mailSender;
 
     public MembershipProcessor(IDefaultReceiptProcessor defaultProcessor, IMailSender mailSender)
-    {        
-        _defaultProcessor = defaultProcessor;        
+    {
+        _defaultProcessor = defaultProcessor;
         _mailSender = mailSender;
     }
 

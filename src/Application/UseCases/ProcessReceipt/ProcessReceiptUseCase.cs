@@ -8,22 +8,22 @@ public class ProcessReceiptUseCase : IProcessReceiptUseCase
 {
     private readonly IReceiptProcessorFactory _processorFactory;
     private IProcessReceiptOutputPort _outputPort = null!;
-    
+
     public void SetOutputPort(IProcessReceiptOutputPort outputPort) =>
-        _outputPort = outputPort;    
+        _outputPort = outputPort;
 
     public ProcessReceiptUseCase(IReceiptProcessorFactory processorFactory)
     {
         _processorFactory = processorFactory;
-    }    
+    }
 
     public async Task Execute(ProcessReceiptInput input)
-    {       
+    {
         var receipt = input.Receipt;
-        
-        var receiptProcessor = _processorFactory.GetProcessor(receipt);        
+
+        var receiptProcessor = _processorFactory.GetProcessor(receipt);
         await receiptProcessor.Execute(receipt);
 
-        _outputPort.Ok();        
-    }    
+        _outputPort.Ok();
+    }
 }

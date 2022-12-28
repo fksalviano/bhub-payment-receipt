@@ -2,5 +2,5 @@ namespace Application.UseCases.ProcessReceipt.ReceiptProcessors.DeliveryNoteSend
 
 public class DeliveryNote
 {
-    
+
 }

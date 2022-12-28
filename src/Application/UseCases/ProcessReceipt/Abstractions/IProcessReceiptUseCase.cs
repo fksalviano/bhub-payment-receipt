@@ -6,5 +6,5 @@ public interface IProcessReceiptUseCase
 {
     void SetOutputPort(IProcessReceiptOutputPort outputPort);
 
-    Task Execute(ProcessReceiptInput input);    
+    Task Execute(ProcessReceiptInput input);
 }

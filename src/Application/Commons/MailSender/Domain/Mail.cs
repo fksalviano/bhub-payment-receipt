@@ -1,8 +1,8 @@
 namespace Application.Commons.MailSender.Domain;
 
 public struct Mail
-{    
-    public string From { get; }   
+{
+    public string From { get; }
     public string To { get; }
     public string Body { get; }
 

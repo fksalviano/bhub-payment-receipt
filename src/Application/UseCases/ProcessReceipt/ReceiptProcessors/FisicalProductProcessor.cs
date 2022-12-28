@@ -15,7 +15,7 @@ public class FisicalProductProcessor : IReceiptProcessor
         IDeliveryNoteSender deliveryNoteSender, ICommissionPaymentGenerator commissionPaymentGenerator)
     {
         _defaultProcessor = defaultProcessor;
-        
+
         _deliveryNoteSender = deliveryNoteSender;
         _commissionPaymentGenerator = commissionPaymentGenerator;
     }

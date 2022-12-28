@@ -8,7 +8,7 @@ namespace Application.UseCases.ProcessReceipt.ReceiptProcessors;
 public class VideoProductProcessor : IReceiptProcessor
 {
     private readonly IReceiptProcessor _defaultProcessor;
-    private readonly IMailSender _mailSender;    
+    private readonly IMailSender _mailSender;
 
     public VideoProductProcessor(IDefaultReceiptProcessor defaultProcessor, IMailSender mailSender)
     {

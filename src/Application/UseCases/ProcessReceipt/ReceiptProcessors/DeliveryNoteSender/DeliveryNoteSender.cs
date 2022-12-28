@@ -17,7 +17,7 @@ public class DeliveryNoteSender : IDeliveryNoteSender
     }
 
     public async Task<DeliveryNote> Execute(PaymentReceipt receipt)
-    {        
+    {
         Console.WriteLine($"{nameof(DeliveryNoteSender)}.Execute()");
 
         var deliveryNote = receipt.GetDeliveryNote();
@@ -26,5 +26,5 @@ public class DeliveryNoteSender : IDeliveryNoteSender
         await _mailSender.SendMail(mail);
 
         return deliveryNote;
-    }    
+    }
 }

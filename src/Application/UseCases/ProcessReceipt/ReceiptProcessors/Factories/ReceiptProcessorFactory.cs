@@ -11,7 +11,7 @@ public class ReceiptProcessorFactory : IReceiptProcessorFactory
     private readonly IEnumerable<IReceiptProcessor> _receiptProcessors;
 
     public ReceiptProcessorFactory(IEnumerable<IReceiptProcessor> receiptProcessors) =>
-        _receiptProcessors = receiptProcessors;    
+        _receiptProcessors = receiptProcessors;
 
     public IReceiptProcessor GetProcessor(PaymentReceipt receipt)
     {
@@ -22,7 +22,7 @@ public class ReceiptProcessorFactory : IReceiptProcessorFactory
                 ProductType.Fisical => GetProcessor<FisicalProductProcessor>(),
                 ProductType.Book    => GetProcessor<BookProductProcessor>(),
                 ProductType.Video   => GetProcessor<VideoProductProcessor>(),
-                _ => 
+                _ =>
                     GetProcessor<DefaultReceiptProcessor>()
             };
         }
@@ -38,6 +38,6 @@ public class ReceiptProcessorFactory : IReceiptProcessorFactory
         return GetProcessor<DefaultReceiptProcessor>();
     }
 
-    private IReceiptProcessor GetProcessor<T>() => 
+    private IReceiptProcessor GetProcessor<T>() =>
         _receiptProcessors.First(p => p.GetType() == typeof(T));
 }

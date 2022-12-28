@@ -14,12 +14,12 @@ public class BookProductProcessor : IReceiptProcessor
     private readonly IMailSender _mailSender;
     private readonly ICommissionPaymentGenerator _commissionPaymentGenerator;
 
-    public BookProductProcessor(IDefaultReceiptProcessor defaultProcessor, 
+    public BookProductProcessor(IDefaultReceiptProcessor defaultProcessor,
         IDeliveryNoteSender deliveryNoteSender, ICommissionPaymentGenerator commissionPaymentGenerator,
         IMailSender mailSender)
     {
         _defaultProcessor = defaultProcessor;
-        
+
         _deliveryNoteSender = deliveryNoteSender;
         _mailSender = mailSender;
         _commissionPaymentGenerator = commissionPaymentGenerator;
@@ -31,7 +31,7 @@ public class BookProductProcessor : IReceiptProcessor
         Console.WriteLine($"{nameof(BookProductProcessor)}.Execute()");
 
         await _commissionPaymentGenerator.Execute(receipt);
-        
+
         var deliveryNote = await _deliveryNoteSender.Execute(receipt);
 
         var royaltiesMail = deliveryNote.GetDeliveryNoteRoyaltiesMail();
