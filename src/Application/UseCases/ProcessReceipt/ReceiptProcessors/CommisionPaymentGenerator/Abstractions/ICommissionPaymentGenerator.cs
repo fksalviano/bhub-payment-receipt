@@ -1,6 +1,6 @@
 using Application.UseCases.ProcessReceipt.Domain;
 
-namespace Application.UseCases.ProcessReceipt.ReceiptProcessors.CommissionPaymentGenerator.Abstractions;
+namespace Application.UseCases.ProcessReceipt.Processors.CommissionPaymentGenerator.Abstractions;
 
 public interface ICommissionPaymentGenerator
 {

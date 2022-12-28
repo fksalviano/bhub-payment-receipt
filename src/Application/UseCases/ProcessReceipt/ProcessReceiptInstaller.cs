@@ -1,13 +1,13 @@
 using Application.Commons.MailSender;
 using Application.Commons.MailSender.Abstractions;
 using Application.UseCases.ProcessReceipt.Abstractions;
-using Application.UseCases.ProcessReceipt.ReceiptProcessors;
-using Application.UseCases.ProcessReceipt.ReceiptProcessors.CommissionPaymentGenerator;
-using Application.UseCases.ProcessReceipt.ReceiptProcessors.CommissionPaymentGenerator.Abstractions;
-using Application.UseCases.ProcessReceipt.ReceiptProcessors.DeliveryNoteSender;
-using Application.UseCases.ProcessReceipt.ReceiptProcessors.DeliveryNoteSender.Abstractions;
-using Application.UseCases.ProcessReceipt.ReceiptProcessors.Factories;
-using Application.UseCases.ProcessReceipt.ReceiptProcessors.Factories.Abstractions;
+using Application.UseCases.ProcessReceipt.Processors;
+using Application.UseCases.ProcessReceipt.Processors.CommissionPaymentGenerator;
+using Application.UseCases.ProcessReceipt.Processors.CommissionPaymentGenerator.Abstractions;
+using Application.UseCases.ProcessReceipt.Processors.DeliveryNoteSender;
+using Application.UseCases.ProcessReceipt.Processors.DeliveryNoteSender.Abstractions;
+using Application.UseCases.ProcessReceipt.Processors.Factories;
+using Application.UseCases.ProcessReceipt.Processors.Factories.Abstractions;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Application.UseCases.ProcessReceipt;

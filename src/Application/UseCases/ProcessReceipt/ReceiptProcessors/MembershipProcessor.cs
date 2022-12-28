@@ -2,25 +2,30 @@ using Application.Commons.Domain;
 using Application.Commons.MailSender.Abstractions;
 using Application.UseCases.ProcessReceipt.Abstractions;
 using Application.UseCases.ProcessReceipt.Domain;
-using Application.UseCases.ProcessReceipt.ReceiptProcessors.Extensions;
+using Application.UseCases.ProcessReceipt.Processors.Extensions;
+using Microsoft.Extensions.Logging;
 
-namespace Application.UseCases.ProcessReceipt.ReceiptProcessors;
+namespace Application.UseCases.ProcessReceipt.Processors;
 
 public class MembershipProcessor : IReceiptProcessor
 {
     private readonly IReceiptProcessor _defaultProcessor;
     private readonly IMailSender _mailSender;
+        private readonly ILogger<MembershipProcessor> _logger;
 
-    public MembershipProcessor(IDefaultReceiptProcessor defaultProcessor, IMailSender mailSender)
+    public MembershipProcessor(IDefaultReceiptProcessor defaultProcessor, IMailSender mailSender,
+        ILogger<MembershipProcessor> logger)
     {
+        _logger = logger;
         _defaultProcessor = defaultProcessor;
+
         _mailSender = mailSender;
     }
 
     public async Task Execute(PaymentReceipt receipt)
     {
         await _defaultProcessor.Execute(receipt);
-        Console.WriteLine($"{nameof(MembershipProcessor)}.Execute()");
+        _logger.LogInformation($"{nameof(MembershipProcessor)}.Execute()");
 
         ActivateMembership(receipt.Membership);
 

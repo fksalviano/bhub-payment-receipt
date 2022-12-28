@@ -1,10 +1,10 @@
 using Application.Commons.Domain;
 using Application.UseCases.ProcessReceipt.Abstractions;
 using Application.UseCases.ProcessReceipt.Domain;
-using Application.UseCases.ProcessReceipt.ReceiptProcessors.Factories.Abstractions;
+using Application.UseCases.ProcessReceipt.Processors.Factories.Abstractions;
 using static Application.Commons.Domain.MembershipType;
 
-namespace Application.UseCases.ProcessReceipt.ReceiptProcessors.Factories;
+namespace Application.UseCases.ProcessReceipt.Processors.Factories;
 
 public class ReceiptProcessorFactory : IReceiptProcessorFactory
 {

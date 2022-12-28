@@ -1,7 +1,7 @@
 using Application.Commons.MailSender.Domain;
-using Application.UseCases.ProcessReceipt.ReceiptProcessors.DeliveryNoteSender.Domain;
+using Application.UseCases.ProcessReceipt.Processors.DeliveryNoteSender.Domain;
 
-namespace Application.UseCases.ProcessReceipt.ReceiptProcessors.DeliveryNoteSender.Extensions;
+namespace Application.UseCases.ProcessReceipt.Processors.DeliveryNoteSender.Extensions;
 
 public static class DeliveryNoteExtensions
 {

@@ -1,4 +1,4 @@
-namespace Application.UseCases.ProcessReceipt.ReceiptProcessors.DeliveryNoteSender.Domain;
+namespace Application.UseCases.ProcessReceipt.Processors.DeliveryNoteSender.Domain;
 
 public class DeliveryNote
 {

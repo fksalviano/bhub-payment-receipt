@@ -5,6 +5,7 @@ using Application.UseCases.ProcessReceipt.Ports;
 using Moq.AutoMock;
 using Moq;
 using Application.Commons.Domain;
+using Microsoft.Extensions.Logging;
 
 namespace UnitTest.UseCases.ProcessReceipt.ReceiptProcessors;
 
@@ -13,14 +14,14 @@ public class ProcessReceiptTests: IClassFixture<ProcessReceiptFixture>
     private readonly IProcessReceiptUseCase _sut;
     private readonly Mock<IProcessReceiptOutputPort> _outputPort;
 
-    private readonly ProcessReceiptFixture _fixture;
-
     public ProcessReceiptTests(ProcessReceiptFixture fixture)
     {
         var mocker = new AutoMocker();
+        
+        var logger = mocker.GetMock<ILogger<ProcessReceiptUseCase>>();
+        var processFactory = fixture.GetProcessorFactory();
 
-        _fixture = fixture;
-        _sut = new ProcessReceiptUseCase(_fixture.GetProcessorFactory());
+        _sut = new ProcessReceiptUseCase(processFactory, logger.Object);
 
         _outputPort = mocker.GetMock<IProcessReceiptOutputPort>();
         _sut.SetOutputPort(_outputPort.Object);
@@ -33,9 +34,6 @@ public class ProcessReceiptTests: IClassFixture<ProcessReceiptFixture>
     [InlineData(ProductType.Video, true)]
     public async Task ShouldProcessProductReceipt(ProductType productType, bool tutorialVideo = false)
     {
-        Console.WriteLine();
-        Console.WriteLine($"Product Type {productType}:");
-
         // Arrange
         var receipt = new PaymentReceipt()
         {
@@ -59,9 +57,6 @@ public class ProcessReceiptTests: IClassFixture<ProcessReceiptFixture>
     [InlineData(MembershipType.Upgrade)]
     public async Task ShouldProcessMembershipReceipt(MembershipType membershipType)
     {
-        Console.WriteLine();
-        Console.WriteLine($"Membership Type {membershipType}:");
-
         // Arrange
         var receipt = new PaymentReceipt()
         {
